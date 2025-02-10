@@ -35,5 +35,17 @@ plt.grid(True)
 plt.show()
 
 
-# bar plot
+# profit per year line plot
+avgProfitPerYear = df.groupby('Year')['Profit'].mean()
 
+
+plt.figure(figsize=(10, 5))
+plt.plot(avgProfitPerYear.index, avgProfitPerYear.values, marker='o', linestyle='-', color='b', label='Avg Profit')
+
+
+plt.xlabel('Tahun')
+plt.ylabel('Rata-rata Profit')
+plt.title('Rata-rata Profit per Tahun')
+plt.legend()
+plt.grid(True)
+plt.show()
